@@ -1,3 +1,5 @@
+package com.example.proyectofinalicc211.logico;
+
 import java.util.UUID;
 
 public class Ruta {
@@ -23,14 +25,7 @@ public class Ruta {
     }
 
     public Ruta(UUID id_origen, UUID id_destino, int tiempo, int costo, double distancia, int transbordos) {
-        this.id = UUID.randomUUID();
-        this.id_origen = id_origen;
-        this.id_destino = id_destino;
-        this.tiempo = tiempo;
-        this.costo = costo;
-        this.distancia = distancia;
-        this.transbordos = transbordos;
-        this.medio = "Autobus";
+        this(id_origen, id_destino, tiempo, costo, distancia, transbordos, "Autobus");
     }
 
     public String getMedio() {

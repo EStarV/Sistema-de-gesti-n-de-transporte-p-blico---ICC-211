@@ -1,3 +1,5 @@
+package com.example.proyectofinalicc211.logico;
+
 import java.util.*;
 
 public class Dijkstra {
@@ -7,7 +9,6 @@ public class Dijkstra {
     public Dijkstra(Map<UUID, List<Ruta>> grafo, Map<UUID, Parada> paradas) {
         this.grafo = grafo;
         this.paradas = paradas;
-
     }
 
     public Camino calcCaminoById(UUID origen, UUID destino, String parametro) {
@@ -72,9 +73,9 @@ public class Dijkstra {
 
     private double getPesoRuta(Ruta r, String peso) {
         if (r == null) return -1;
-        if ("distancia".equalsIgnoreCase(peso)) {
+        if (peso.equalsIgnoreCase("distancia")) {
             return r.getDistancia();
-        } else if ("costo".equalsIgnoreCase(peso)) {
+        } else if (peso.equalsIgnoreCase("costo")) {
             return r.getCosto();
         } else {
             return r.getTiempo();

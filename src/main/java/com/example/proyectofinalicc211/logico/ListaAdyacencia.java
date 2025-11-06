@@ -1,27 +1,23 @@
+package com.example.proyectofinalicc211.logico;
+
 import java.util.*;
 
 public class ListaAdyacencia {
     private Map<UUID, List<Ruta>> grafo = new HashMap<>();
     private Map<UUID, Parada> paradas = new HashMap<>();
 
-    private static ListaAdyacencia instancia = null;
-    public static ListaAdyacencia getInstancia() {
-        if(instancia == null)
-            instancia = new ListaAdyacencia();
-        return instancia;
-    }
-
     public ListaAdyacencia() {}
 
     public void addParada(Parada parada){
         if(parada == null || parada.getId() == null) return;
         paradas.put(parada.getId(), parada);
-        grafo.put(parada.getId(), new LinkedList<Ruta>());
+        grafo.put(parada.getId(), new LinkedList<>());
         grafo.put(parada.getId(), grafo.get(parada.getId()));
     }
 
     public boolean addRuta(Ruta ruta){
         if(ruta == null || ruta.getId() == null || ruta.getId_origen() == null || ruta.getId_destino() == null) return false;
+        if(existeRutaEntreNodos(ruta.getId_origen(), ruta.getId_destino(), ruta.getMedio())) return false;
         if(grafo.containsKey(ruta.getId_origen())){
             grafo.get(ruta.getId_origen()).add(ruta);
             return true;
@@ -127,6 +123,7 @@ public class ListaAdyacencia {
     public boolean modifNodosRuta(Parada new_origen, Parada new_destino, Ruta ruta){
         if(new_origen == null || new_destino == null) return false;
         if(!paradas.containsKey(new_origen.getId()) || !paradas.containsKey(new_destino.getId())) return false;
+        if(existeRutaEntreNodos(new_origen.getId(), new_destino.getId(), ruta.getMedio())) return false;
 
         Ruta r = getRuta(ruta.getId_origen(), ruta.getId());
         if(r == null) return false;
@@ -147,6 +144,16 @@ public class ListaAdyacencia {
             }
         }
         return null;
+    }
+
+    public boolean existeRutaEntreNodos(UUID origen, UUID destino, String medio){
+        List<Ruta>rutas = grafo.get(origen);
+        for(Ruta r : rutas){
+            if(r.getId_destino().equals(destino) && r.getMedio().equals(medio)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

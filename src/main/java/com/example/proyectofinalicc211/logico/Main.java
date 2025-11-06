@@ -1,3 +1,5 @@
+package com.example.proyectofinalicc211.logico;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -6,7 +8,8 @@ public class Main {
         for(int i=0; i<8; i++){
              paradas.add(new Parada(String.format("%c", 'A'+i)));
         }
-        ListaAdyacencia.getInstancia().addParadasLista(paradas);
+        ListaAdyacencia lista = new ListaAdyacencia();
+        lista.addParadasLista(paradas);
         ArrayList<Ruta> rutas = new ArrayList<>();
         rutas.add(new Ruta(paradas.get(0).getId(), paradas.get(3).getId(), 10, 35, 2, 1));
         rutas.add(new Ruta(paradas.get(0).getId(), paradas.get(2).getId(), 2, 20, 1.5, 1, "Metro"));
@@ -23,10 +26,10 @@ public class Main {
         rutas.add(new Ruta(paradas.get(5).getId(), paradas.get(6).getId(), 5, 35, 8, 1, "Monorriel"));
         rutas.add(new Ruta(paradas.get(6).getId(), paradas.get(7).getId(), 4, 20, 2, 2));
 
-        ListaAdyacencia.getInstancia().addRutasLista(rutas);
-        Camino caminoCorto1 = ListaAdyacencia.getInstancia().dijkstra(paradas.get(0), paradas.get(7), "tiempo");
-        Camino caminoCorto2 = ListaAdyacencia.getInstancia().dijkstra(paradas.get(0), paradas.get(7), "distancia");
-        Camino caminoCorto3 = ListaAdyacencia.getInstancia().dijkstra(paradas.get(0), paradas.get(7), "Costo");
+        lista.addRutasLista(rutas);
+        Camino caminoCorto1 = lista.dijkstra(paradas.get(0), paradas.get(7), "tiempo");
+        Camino caminoCorto2 = lista.dijkstra(paradas.get(0), paradas.get(7), "distancia");
+        Camino caminoCorto3 = lista.dijkstra(paradas.get(0), paradas.get(7), "Costo");
         caminoCorto1.printCamino();
         caminoCorto2.printCamino();
         caminoCorto3.printCamino();

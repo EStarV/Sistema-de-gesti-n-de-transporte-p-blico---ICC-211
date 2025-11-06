@@ -5,10 +5,10 @@ public class Ruta {
     private UUID id;
     private UUID id_origen;
     private UUID id_destino;
-    private int tiempo; //En minutos
-    private int costo; //En pesos
-    private double distancia; //en km
-    private int transbordos; //cantidad de transbordos
+    private int tiempo; // En minutos
+    private int costo; // En pesos
+    private double distancia; // En km
+    private int transbordos; // Cantidad de transbordos
     private String medio;
 
     public Ruta(UUID id_origen, UUID id_destino, int tiempo, int costo, double distancia, int transbordos, String medio) {

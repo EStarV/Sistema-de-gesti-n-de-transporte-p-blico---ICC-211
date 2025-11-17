@@ -21,7 +21,7 @@ public class Main {
         rutas.add(new Ruta(paradas.get(3).getId(), paradas.get(5).getId(), 8, 35, 10, 2 ));
         rutas.add(new Ruta(paradas.get(3).getId(), paradas.get(6).getId(), 10, 35, 10, 1, "Monorriel"));
         rutas.add(new Ruta(paradas.get(4).getId(), paradas.get(6).getId(), 6, 25, 4, 2, "Tranvia"));
-        rutas.add(new Ruta(paradas.get(4).getId(), paradas.get(7).getId(), 7, 30, 4, 1, "Tranvia"));
+        rutas.add(new Ruta(paradas.get(4).getId(), paradas.get(7).getId(), 8, 30, 4, 1, "Tranvia"));
         rutas.add(new Ruta(paradas.get(5).getId(), paradas.get(4).getId(), 3, 35, 5, 3, "Metro"));
         rutas.add(new Ruta(paradas.get(5).getId(), paradas.get(6).getId(), 5, 35, 8, 1, "Monorriel"));
         rutas.add(new Ruta(paradas.get(6).getId(), paradas.get(7).getId(), 4, 20, 2, 2));
@@ -33,5 +33,11 @@ public class Main {
         caminoCorto1.printCamino();
         caminoCorto2.printCamino();
         caminoCorto3.printCamino();
+        Camino caminoFloyd1 = lista.floydMarshall(paradas.get(0), paradas.get(7), "tiempo");
+        Camino caminoFloyd2 = lista.floydMarshall(paradas.get(0), paradas.get(7), "distancia");
+        Camino caminoFloyd3 = lista.floydMarshall(paradas.get(0), paradas.get(7), "Costo");
+        caminoFloyd1.printCamino();
+        caminoFloyd2.printCamino();
+        caminoFloyd3.printCamino();
     }
 }

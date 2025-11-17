@@ -92,6 +92,16 @@ public class ListaAdyacencia {
         return dijkstra.calCamino(origen, destino, parametro);
     }
 
+    public Camino floydMarshall(Parada origen, Parada destino, String parametro){
+        FloydMarshall floyd = new FloydMarshall(grafo, paradas);
+        return floyd.calcularCamino(origen, destino, parametro);
+    }
+
+    public Camino floydMarshall(UUID origen, UUID destino, String parametro){
+        FloydMarshall floyd = new FloydMarshall(grafo, paradas);
+        return floyd.calcularCamino(origen, destino, parametro);
+    }
+
     public Camino dijkstraID(UUID origen, UUID destino, String parametro){
         Dijkstra dijkstra = new Dijkstra(grafo, paradas);
         return dijkstra.calcCaminoById(origen, destino, parametro);

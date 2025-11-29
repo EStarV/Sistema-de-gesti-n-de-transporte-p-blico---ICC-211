@@ -89,12 +89,12 @@ public class ListaAdyacencia {
 
     public Camino dijkstra(Parada origen, Parada destino, String parametro){
         Dijkstra dijkstra = new Dijkstra(grafo, paradas);
-        return dijkstra.calCamino(origen, destino, parametro);
+        return dijkstra.calcCamino(origen, destino, parametro);
     }
 
     public Camino floydMarshall(Parada origen, Parada destino, String parametro){
         FloydMarshall floyd = new FloydMarshall(grafo, paradas);
-        return floyd.calcularCamino(origen, destino, parametro);
+        return floyd.calcCamino(origen, destino, parametro);
     }
 
     public Camino floydMarshall(UUID origen, UUID destino, String parametro){
@@ -104,7 +104,12 @@ public class ListaAdyacencia {
 
     public Camino dijkstraID(UUID origen, UUID destino, String parametro){
         Dijkstra dijkstra = new Dijkstra(grafo, paradas);
-        return dijkstra.calcCaminoById(origen, destino, parametro);
+        return dijkstra.calcCaminoById(origen, destino, parametro, null);
+    }
+
+    public ArrayList<Camino> rutaMasCortayAlterna(Parada origen, Parada destino, String parametro){
+        Dijkstra dijkstra = new Dijkstra(grafo, paradas);
+        return (ArrayList<Camino>) dijkstra.caminosAlternos(origen, destino, parametro);
     }
 
     public boolean modificarParada(Parada parada, String new_nombre){

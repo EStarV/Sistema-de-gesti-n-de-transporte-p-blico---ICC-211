@@ -33,11 +33,10 @@ public class Main {
         caminoCorto1.printCamino();
         caminoCorto2.printCamino();
         caminoCorto3.printCamino();
-        Camino caminoFloyd1 = lista.floydMarshall(paradas.get(0), paradas.get(7), "tiempo");
-        Camino caminoFloyd2 = lista.floydMarshall(paradas.get(0), paradas.get(7), "distancia");
-        Camino caminoFloyd3 = lista.floydMarshall(paradas.get(0), paradas.get(7), "Costo");
-        caminoFloyd1.printCamino();
-        caminoFloyd2.printCamino();
-        caminoFloyd3.printCamino();
+
+        ArrayList<Camino> caminos = lista.rutaMasCortayAlterna(paradas.get(0), paradas.get(7), "tiempo");
+        for(Camino camino : caminos){
+            camino.printCamino();
+        }
     }
 }

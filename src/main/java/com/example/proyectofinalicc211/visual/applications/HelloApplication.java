@@ -1,4 +1,4 @@
-package com.example.proyectofinalicc211;
+package com.example.proyectofinalicc211.visual;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

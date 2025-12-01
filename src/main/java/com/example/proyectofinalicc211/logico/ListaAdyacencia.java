@@ -170,7 +170,10 @@ public class ListaAdyacencia {
 
     public ArrayList<Camino> rutaMasCortayAlterna(Parada origen, Parada destino, String parametro){
         Dijkstra dijkstra = new Dijkstra(grafo, paradas);
-        return (ArrayList<Camino>) dijkstra.caminosAlternos(origen, destino, parametro);
+        List<Camino> camino = dijkstra.caminosAlternos(origen, destino, parametro);
+        if(camino == null || camino.isEmpty())
+            return null;
+        return (ArrayList<Camino>) camino;
     }
 
     public boolean modificarParada(Parada parada, String new_nombre){

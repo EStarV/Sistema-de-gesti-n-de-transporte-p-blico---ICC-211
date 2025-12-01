@@ -134,7 +134,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.proyectofinalicc211/com.example.proyectofinalicc211.HelloApplication
+                                com.example.proyectofinalicc211/com.example.proyectofinalicc211.visual.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

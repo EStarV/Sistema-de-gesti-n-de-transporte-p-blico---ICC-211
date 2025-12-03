@@ -1,3 +1,5 @@
+package com.example.proyectofinalicc211.logico;
+
 import java.util.UUID;
 
 public class Parada {

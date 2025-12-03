@@ -1,15 +1,47 @@
-package com.example.proyectofinalicc211.logico;
+package com.example.proyectofinalicc211.visual.applications;
+
+import com.example.proyectofinalicc211.logico.ListaAdyacencia;
+import com.example.proyectofinalicc211.logico.Parada;
+import com.example.proyectofinalicc211.logico.Ruta;
+import com.example.proyectofinalicc211.visual.utilities.Constantes;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
 
 import java.util.ArrayList;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        populate();
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(Constantes.MAIN_PAGE));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Image logo = new Image(Constantes.LOGO);
+        stage.getIcons().add(logo);
+        stage.setResizable(false);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public static void main(String[] args) {
+        launch(args);
+    }
+
+    //Esto es temporal y solo para probar
+    private void populate(){
+
         ArrayList<Parada> paradas = new ArrayList<>();
         for(int i=0; i<8; i++){
-             paradas.add(new Parada(String.format("%c", 'A'+i)));
+            paradas.add(new Parada(String.format("%c", 'A'+i)));
         }
-        ListaAdyacencia lista = new ListaAdyacencia();
-        lista.addParadasLista(paradas);
+        ListaAdyacencia.getInstancia().addParadasLista(paradas);
         ArrayList<Ruta> rutas = new ArrayList<>();
         rutas.add(new Ruta(paradas.get(0).getId(), paradas.get(3).getId(), 10, 35, 2, 1));
         rutas.add(new Ruta(paradas.get(0).getId(), paradas.get(2).getId(), 2, 20, 1.5, 1, "Metro"));
@@ -25,18 +57,8 @@ public class Main {
         rutas.add(new Ruta(paradas.get(5).getId(), paradas.get(4).getId(), 3, 35, 5, 3, "Metro"));
         rutas.add(new Ruta(paradas.get(5).getId(), paradas.get(6).getId(), 5, 35, 8, 1, "Monorriel"));
         rutas.add(new Ruta(paradas.get(6).getId(), paradas.get(7).getId(), 4, 20, 2, 2));
+        //rutas.add((new Ruta(paradas.get(0).getId(), paradas.get(3).getId(), 1, 20, 3, 1, "Metro")));
 
-        lista.addRutasLista(rutas);
-        Camino caminoCorto1 = lista.dijkstra(paradas.get(0), paradas.get(7), "tiempo");
-        Camino caminoCorto2 = lista.dijkstra(paradas.get(0), paradas.get(7), "distancia");
-        Camino caminoCorto3 = lista.dijkstra(paradas.get(0), paradas.get(7), "Costo");
-        caminoCorto1.printCamino();
-        caminoCorto2.printCamino();
-        caminoCorto3.printCamino();
-
-        ArrayList<Camino> caminos = lista.rutaMasCortayAlterna(paradas.get(0), paradas.get(7), "tiempo");
-        for(Camino camino : caminos){
-            camino.printCamino();
-        }
+        ListaAdyacencia.getInstancia().addRutasLista(rutas);
     }
 }

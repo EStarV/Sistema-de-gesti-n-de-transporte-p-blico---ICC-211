@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scsSelRuta" prefHeight="281.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinalicc211.visual.controllers.SeleccRutaController">
+   <children>
+      <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="38.0" prefWidth="484.0" text="Elegir Ruta">
+         <font>
+            <Font name="Bell MT" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="77.0" text="Elegir Parada de origen:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="272.0" layoutY="77.0" text="Elegir Parada de destino:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbxOrigen" layoutX="24.0" layoutY="105.0" prefHeight="25.0" prefWidth="196.0" />
+      <ComboBox fx:id="cbxDestino" layoutX="272.0" layoutY="105.0" prefHeight="25.0" prefWidth="196.0" />
+      <ChoiceBox fx:id="cbxMedio" layoutX="90.0" layoutY="166.0" prefHeight="25.0" prefWidth="147.0" />
+      <Label layoutX="25.0" layoutY="169.0" text="Medio:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="11.0" layoutY="211.0" prefHeight="6.0" prefWidth="460.0" />
+      <Button fx:id="btnCancelar" layoutX="402.0" layoutY="234.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="btnEliminar" layoutX="335.0" layoutY="234.0" mnemonicParsing="false" onAction="#delete" text="Eliminar" />
+      <Button fx:id="btnModificar" layoutX="259.0" layoutY="234.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+      <Button fx:id="btnReset" layoutX="144.0" layoutY="234.0" mnemonicParsing="false" onAction="#reset" text="Resetear Paradas" />
+      <Separator layoutX="14.0" layoutY="52.0" prefHeight="12.0" prefWidth="460.0" />
+   </children>
+</AnchorPane>

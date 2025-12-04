@@ -1,7 +1,7 @@
-package com.example.proyectofinalicc211.visual.controllers;
+package com.example.proyectofinalicc211.view.controllers;
 
-import com.example.proyectofinalicc211.logico.ListaAdyacencia;
-import com.example.proyectofinalicc211.logico.Parada;
+import com.example.proyectofinalicc211.model.ListaAdyacencia;
+import com.example.proyectofinalicc211.model.Parada;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

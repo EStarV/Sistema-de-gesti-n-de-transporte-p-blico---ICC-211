@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.proyectofinalicc211.view.VistaPrincipal"
+            style="-fx-background-color: #f4f6f9;">
+
+    <top>
+        <VBox spacing="0">
+            <!-- MENU PRINCIPAL -->
+            <MenuBar style="-fx-background-color: #2c3e50;">
+                <Menu text=" Paradas " style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Agregar Parada" onAction="#abrirAddParada"/>
+                    <MenuItem text="Modificar Parada" onAction="#abrirModifParada"/>
+                    <MenuItem text="Eliminar Parada" onAction="#abrirElimParada"/>
+                </Menu>
+                <Menu text=" Rutas " style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Agregar Ruta" onAction="#abrirAddRuta"/>
+                    <MenuItem text="Modificar Ruta" onAction="#abrirModifRuta"/>
+                    <MenuItem text="Eliminar Ruta" onAction="#abrirElimRuta"/>
+                </Menu>
+                <Menu text=" Búsqueda " style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Búsqueda Avanzada (Dijkstra)" onAction="#abrirDijkstra"/>
+                    <MenuItem text="Búsqueda Avanzada (Floyd-Warshall)" onAction="#abrirFloyd"/>
+                </Menu>
+                <Menu text=" Ayuda " style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <MenuItem text="Acerca de" onAction="#mostrarAcercaDe"/>
+                </Menu>
+            </MenuBar>
+
+            <!-- PANEL DE BÚSQUEDA RÁPIDA -->
+            <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 20; -fx-background-color: #34495e;">
+                <Label text="Origen:" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="cbOrigen" prefWidth="180"/>
+                <Label text="Destino:" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="cbDestino" prefWidth="180"/>
+                <Label text="Optimizar por:" style="-fx-text-fill: white;"/>
+                <ChoiceBox fx:id="cbParametro" prefWidth="130"/>
+                <Label text="Algoritmo:" style="-fx-text-fill: white;"/>
+                <ChoiceBox fx:id="cbAlgorithm" prefWidth="130"/>
+                <Button text="CALCULAR RUTA" onAction="#calcularRuta"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <Pane fx:id="mapaPane" style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 2;"/>
+    </center>
+
+    <bottom>
+        <Label fx:id="lblEstado" text="Sistema listo - Paradas cargadas desde Supabase"
+               style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 12;"/>
+    </bottom>
+</BorderPane>

@@ -1,8 +1,8 @@
-package com.example.proyectofinalicc211.visual.controllers;
+package com.example.proyectofinalicc211.view.controllers;
 
-import com.example.proyectofinalicc211.logico.ListaAdyacencia;
-import com.example.proyectofinalicc211.logico.Parada;
-import com.example.proyectofinalicc211.visual.utilities.Constantes;
+import com.example.proyectofinalicc211.model.ListaAdyacencia;
+import com.example.proyectofinalicc211.model.Parada;
+import com.example.proyectofinalicc211.view.utilities.Constantes;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -20,7 +20,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

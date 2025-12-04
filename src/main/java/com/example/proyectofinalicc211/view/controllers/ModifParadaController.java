@@ -1,21 +1,17 @@
-package com.example.proyectofinalicc211.visual.controllers;
+package com.example.proyectofinalicc211.view.controllers;
 
-import com.example.proyectofinalicc211.logico.ListaAdyacencia;
-import com.example.proyectofinalicc211.logico.Parada;
-import com.example.proyectofinalicc211.visual.utilities.Constantes;
+import com.example.proyectofinalicc211.model.ListaAdyacencia;
+import com.example.proyectofinalicc211.model.Parada;
+import com.example.proyectofinalicc211.view.utilities.Constantes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ModifParadaController {
     private Parada modifParada;

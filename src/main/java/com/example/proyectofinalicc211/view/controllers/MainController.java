@@ -1,5 +1,5 @@
-package com.example.proyectofinalicc211.visual.controllers;
-import com.example.proyectofinalicc211.visual.utilities.Constantes;
+package com.example.proyectofinalicc211.view.controllers;
+import com.example.proyectofinalicc211.view.utilities.Constantes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-package com.example.proyectofinalicc211.visual.utilities;
+package com.example.proyectofinalicc211.view.utilities;
 
 public class Constantes {
     public static int PARADA_NAME_LENGTH = 100;

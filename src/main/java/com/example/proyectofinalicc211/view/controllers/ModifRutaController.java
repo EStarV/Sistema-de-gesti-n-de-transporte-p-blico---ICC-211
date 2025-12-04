@@ -1,7 +1,7 @@
-package com.example.proyectofinalicc211.visual.controllers;
-import com.example.proyectofinalicc211.logico.ListaAdyacencia;
-import com.example.proyectofinalicc211.logico.Parada;
-import com.example.proyectofinalicc211.logico.Ruta;
+package com.example.proyectofinalicc211.view.controllers;
+import com.example.proyectofinalicc211.model.ListaAdyacencia;
+import com.example.proyectofinalicc211.model.Parada;
+import com.example.proyectofinalicc211.model.Ruta;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

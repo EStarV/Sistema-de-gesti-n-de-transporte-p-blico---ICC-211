@@ -1,4 +1,4 @@
-package com.example.proyectofinalicc211.logico;
+package com.example.proyectofinalicc211.model;
 
 import java.util.*;
 

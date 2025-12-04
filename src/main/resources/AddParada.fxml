@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="addScene" prefHeight="208.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinalicc211.visual.controllers.AddParadaController">
+<AnchorPane fx:id="addScene" prefHeight="208.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinalicc211.view.controllers.AddParadaController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-4.0" prefHeight="36.0" prefWidth="268.0" text="Agregar Parada">
          <font>

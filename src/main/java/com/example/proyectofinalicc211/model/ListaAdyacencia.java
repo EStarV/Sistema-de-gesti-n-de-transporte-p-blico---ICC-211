@@ -83,7 +83,6 @@ public class ListaAdyacencia {
         return false;
     }
 
-    // ==== FUNCIÓN QUE TE FALTABA ====
     public boolean deleteParada(Parada parada) {
         if (parada == null || parada.getId() == null) return false;
 
@@ -120,7 +119,6 @@ public class ListaAdyacencia {
 
         return true;
     }
-    // =================================
 
     public boolean deleteRuta(Ruta ruta) {
         if (ruta == null) return false;

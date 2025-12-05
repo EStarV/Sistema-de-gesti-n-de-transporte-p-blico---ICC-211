@@ -7,12 +7,10 @@ import java.util.List;
 
 public class MainTest {
     public static void main(String[] args) {
-        // Limpiamos instancia para prueba limpia (opcional)
         ListaAdyacencia instancia = ListaAdyacencia.getInstancia();
 
         System.out.println("Iniciando prueba local del sistema de rutas...");
 
-        // === CREAR PARADAS ===
         List<Parada> paradas = new ArrayList<>();
         String[] nombres = {"A", "B", "C", "D", "E", "F", "G", "H"};
         for (int i = 0; i < 8; i++) {
@@ -25,7 +23,6 @@ public class MainTest {
         instancia.addParadasLista(paradas);
         System.out.println("8 paradas creadas y guardadas en Supabase");
 
-        // === CREAR RUTAS ===
         instancia.addRutasLista(List.of(
                 new Ruta(paradas.get(0).getId(), paradas.get(3).getId(), 10, 35, 2.0, 1),
                 new Ruta(paradas.get(0).getId(), paradas.get(2).getId(), 2, 20, 1.5, 1, "Metro"),

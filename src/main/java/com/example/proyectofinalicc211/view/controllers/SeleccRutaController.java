@@ -25,7 +25,6 @@ import java.util.*;
 
 public class SeleccRutaController implements Initializable {
 
-
     @FXML
     private Button btnCancelar;
 
@@ -49,7 +48,6 @@ public class SeleccRutaController implements Initializable {
 
     @FXML
     private AnchorPane scsSelRuta;
-
 
     @FXML
     void cancelar(ActionEvent event) {
